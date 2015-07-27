@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+*{
+	padding: 0;
+	margin: 0;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+body{
+	width: 100%;
+	min-height: 100%;
+	display: block;
+}
+body:before{
+	content: "";
+	z-index: -1;
+	background-image: image-url('home_background.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	will-change: transform;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
