@@ -16,3 +16,28 @@
 		}
 	}
 }
+.manager-style{
+	.mdl-layout__content{
+		padding-top: 100px;
+		.manager-style__main{
+			max-width: 1010px;
+			.manager-sidebar{
+				background: #fff;
+				.sidebar{
+					list-style: none;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+	    		flex-direction: column;
+					a{
+						margin: 10px;
+						padding: 15px 30px;
+						display: block;
+					}
+				}
+			}
+			.manager-content{
+				background: #fff;
+			}
+		}
+	}
+}

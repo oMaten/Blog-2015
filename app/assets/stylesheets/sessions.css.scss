@@ -1,3 +1,17 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.session-style{
+	.mdl-layout__content{
+		padding-top: 200px;
+		padding-bottom: 100px;
+		.session-style__signin{
+			max-width: 900px;
+			.session-signin__form{
+				padding: 20px;
+				background-color: #ffffff;
+				text-align: center;
+				.mdl-textfield{
+					display: block;
+				}
+			}
+		}
+	}
+}

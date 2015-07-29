@@ -4,11 +4,6 @@
       <div class="mdl-card mdl-cell mdl-cell--8-col blog-user__img">
         <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__supporting-text blog-banner__title">
-          <!-- <div class="mini-logo"></div>
-          <div>
-            <strong>The Newist</strong>
-            <p>2 days ago</p>
-          </div> -->
         </div>
       </div>
       <div class="mdl-card mdl-cell mdl-cell--4-col">
@@ -19,9 +14,15 @@
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-top-left">
-            <li class="mdl-menu__item"><%= link_to "Sign up", signup_path %></li>
-            <li class="mdl-menu__item">Setting</li>
-            <li class="mdl-menu__item">Messages</li>
+            <% if signed_in? %>
+              <li class="mdl-menu__item"><%= link_to current_user.name, '#' %></li>
+              <li class="mdl-menu__item"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+            <% else %>
+              <li class="mdl-menu__item"><%= link_to "Sign up", signup_path %></li>
+              <li class="mdl-menu__item"><%= link_to "Sign in", signin_path %></li>
+              <li class="mdl-menu__item"><%= link_to "Setting", '#' %></li>
+              <li class="mdl-menu__item"><%= link_to "Message", '#' %></li>
+            <% end %>
           </ul>
         </div>
       </div>
