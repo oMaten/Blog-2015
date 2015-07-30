@@ -7,40 +7,30 @@
 	.blog-style__posts{
 		max-width: 900px;
 		.blog-user__img{
-			background-image: image-url('content_img_01.png');
+			background-color: #CCFFCC;
 			background-size: cover;
 		}
 		.blog-message__img{
-			background-image: image-url('content_img_02.png');
+			background-color: #CCFFCC;
 			background-size: cover;
 		}
 		.blog-banner__title{
 			background-color: rgba(0,0,0,.2);
-			color: #669999;
+			color: #CCFFCC;
 			font-size: 16px;
 		}
 		.blog-message__title{
-			background-color: rgba(255,153,0,.6);
+			background-color: rgba(204,255,204,.6);
 		}
 		.mdl-card{
 			.mdl-card__media{
 				padding: 20px;
 				min-height: 200px;
-				background-color: #ff9933;
+				background-color: #CCFFCC;
 			}
 			.mdl-card__supporting-text{
 				min-height: 62px;
 				width: 100%;
-				.mini-logo{
-					width: 44px;
-					height: 44px;
-					background-position: center;
-				  background-repeat: no-repeat;
-				  background-size: 50%;
-				  border-radius: 22px;
-				  background-color: #669999;
-					background-image: image-url('ic_email_white_48dp.png');
-				}
 			}
 		}
 	}
