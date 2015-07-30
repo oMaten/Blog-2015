@@ -15,7 +15,7 @@
           </button>
           <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-top-left">
             <% if signed_in? %>
-              <li class="mdl-menu__item"><%= link_to current_user.name, '#' %></li>
+              <li class="mdl-menu__item"><%= link_to current_user.name, current_user %></li>
               <li class="mdl-menu__item"><%= link_to "Sign out", signout_path, method: "delete" %></li>
             <% else %>
               <li class="mdl-menu__item"><%= link_to "Sign up", signup_path %></li>

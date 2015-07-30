@@ -1,7 +1,11 @@
 Blog2015::Application.routes.draw do
-  resources :users
+  resources :users do
+  	member do
+      get :post
+    end
+  end
   resources :sessions, only:[:new, :create, :destroy]
-  resources :posts, only:[:index, :new, :create, :destroy, :show]
+  resources :posts
 
   root to: 'static_pages#home'
 

@@ -25,6 +25,11 @@ before_filter :admin_user, only: :destroy
   def edit
   end
 
+  def post
+    @user = current_user
+    @posts = current_user.posts
+  end
+
   private
     def correct_user
       @user = User.find(params[:id])

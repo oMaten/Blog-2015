@@ -1,0 +1,26 @@
+<% provide(:title, @user.name) %>
+<div class="manager-style mdl-layout mdl-js-layout">
+  <main class="mdl-layout__content">
+  	<div class="manager-style__main mdl-grid">
+  		<div class="mdl-cell mdl-cell--2-col manager-sidebar">
+  			<nav class="sidebar mdl-navigation ">
+  				<%= link_to "主 页", root_path %>
+  				<%= link_to "个 人", current_user %>
+          <%= link_to "文 章", post_user_path(@user) %>
+  				<a href="#" class="mdl-navigation__link">短讯</a>
+  				<%= link_to "退出", signout_path, method: 'delete' %>
+  			</ul>
+  		</div>
+  		<div class="mdl-cell mdl-cell--10-col manager-content">
+  			<%= link_to "文 章 管 理", posts_path %>
+        <% if @posts.any? %>
+          <h3>Posts (<%= @posts.count %>)</h3>
+          <nav class="posts">
+            <%= render @posts %>
+          </nav>
+          <%= paginate @posts %>
+        <% end %>
+  		</div>
+  	</div>
+  </main>
+</div>
