@@ -7,7 +7,7 @@
 			max-width: 900px;
 			.user-signup__form{
 				padding: 20px;
-				background-color: #ffffff;
+				background-color: #FFFAFA;
 				text-align: center;
 				.mdl-textfield{
 					display: block;
@@ -22,21 +22,27 @@
 		.manager-style__main{
 			max-width: 1010px;
 			.manager-sidebar{
-				background: #fff;
+				background: #FFFAFA;
 				.sidebar{
 					list-style: none;
 					-webkit-flex-direction: column;
 					-ms-flex-direction: column;
 	    		flex-direction: column;
-					a{
-						margin: 10px;
+	    		span{
+	    			margin: 10px;
 						padding: 15px 30px;
 						display: block;
-					}
+						a{
+							text-align: center;
+							padding: 0 15px;
+							word-spacing: 10px;
+							text-decoration: none;
+						}
+	    		}
 				}
 			}
 			.manager-content{
-				background: #fff;
+				background: #FFFAFA;
 			}
 		}
 	}

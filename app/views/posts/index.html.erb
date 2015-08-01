@@ -1,1 +1,14 @@
 <% provide(:title, @user.name + 'Article') %>
+<div class="post-style mdl-layout mdl-js-layout">
+	<main class="mdl-layout__content">
+		<div class="post-style__main mdl-grid">
+			<div class="mdl-cell mdl-cell--1-col"></div>
+			<div class="mdl-cell mdl-cell--10-col post-content">
+				<button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab">
+					<i class="material-icons mdl-color-text--white">add</i>
+				</button>
+				<%= link_to "返回", @user %>
+			</div>
+		</div>
+	</main>
+</div>

@@ -1,3 +1,22 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.post-style{
+	.mdl-layout__content{
+		padding-top: 100px;
+		.post-style__main{
+			max-width: 1010px;
+			.post-content{
+				background-color: #FFFAFA;
+				min-height: 500px;
+				position: relative;
+				a{
+					line-height: 100px;
+				}
+				button{
+					position: absolute;
+					top: -20px;
+					left: -20px;
+					background-color: #DEB887;
+				}
+			}
+		}
+	}
+}
