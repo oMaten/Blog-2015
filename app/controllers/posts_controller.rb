@@ -6,8 +6,9 @@ before_filter :admin_user, only: :destroy
 
 	end
 
-	def create
-
+	def new
+		@user = current_user
+		@post = @user.posts
 	end
 
 	def destroy
