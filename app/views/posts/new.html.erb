@@ -4,6 +4,15 @@
 		<div class="post-style__main mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col"></div>
 			<div class="mdl-cell mdl-cell--10-col post-content">
+				<%= form_for(@post) do |f| %>
+					<div class="field">
+						<%= f.text_area :title, placeholder: "Add the title..." %>
+					</div>
+				  <div class="field">
+				    <%= f.text_area :content, placeholder: "Compose new post..." %>
+				  </div>
+				  <%= f.submit "Post", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+				<% end %>
 			</div>
 		</div>
 	</main>

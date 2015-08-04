@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
-before_filter :correct_user,   only: [:edit, :update]
+before_filter :correct_user,   only: [:edit, :update, :show, :post]
 before_filter :admin_user, only: :destroy
 
   def new
@@ -19,7 +19,7 @@ before_filter :admin_user, only: :destroy
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).per(15)
+    @posts = @user.posts
   end
 
   def edit
@@ -28,6 +28,14 @@ before_filter :admin_user, only: :destroy
   def post
     @user = User.find(params[:id])
     @posts = @user.posts
+  end
+  def update
+    if @user.update_attributes(params[:user])
+      sign_in @user
+      redirect_to @user
+    else
+      render 'show'
+    end
   end
 
   private

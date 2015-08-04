@@ -8,14 +8,22 @@ before_filter :admin_user, only: :destroy
 
 	def new
 		@user = current_user
-		@post = @user.posts
+		@post = current_user.posts.build(params[:post])
 	end
 
 	def destroy
-
 	end
 
 	def index
 		@user = current_user
+	end
+
+	def create
+		@post = current_user.posts.build(params[:post])
+  	if @post.save
+  		redirect_to current_user
+  	else
+  		render 'new'
+  	end
 	end
 end
