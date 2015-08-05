@@ -9,24 +9,44 @@
 		.blog-user__img{
 			background-color: #ffffff;
 			background-size: cover;
+			background-image: image-url('banner.png');
 		}
 		.blog-message__img{
-			background-color: rgba(204,255,204,.6);
+			background-color: rgba(255,255,255,1);
 			background-size: cover;
+			.message-logo{
+				width: 120px;
+				height: 120px;
+				background: image-url('logo.png') no-repeat;
+				background-size: 50% 50%;
+				background-position: 50% 50%;
+				border-radius: 50%;
+				overflow: hidden;
+				margin: 20px auto;
+				position: relative;
+			}
 		}
 		.blog-banner__title{
-			background-color: rgba(204,255,204,.6);
+			background-color: rgba(255,255,255,.6);
 			color: #CCFFCC;
 			font-size: 16px;
 		}
 		.blog-message__title{
-			background-color: #ffffff;
+			background-color: #D9D9D9;
 		}
 		.mdl-card{
+			.blog-style-bg-1{
+				background-image: image-url('home_img_01.png');
+			}
+			.blog-style-bg-2{
+				background-image: image-url('home_img_02.png');
+			}
+			.blog-style-bg-3{
+				background-image: image-url('home_img_03.png');
+			}
 			.mdl-card__media{
 				padding: 20px;
-				min-height: 200px;
-				background-color: rgba(204,255,204,.6);
+				min-height: 280px;
 			}
 			.mdl-card__supporting-text{
 				min-height: 62px;

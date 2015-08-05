@@ -21,7 +21,7 @@ body{
 body:before{
 	content: "";
 	z-index: -1;
-	background-image: image-url('home_background.jpg');
+	background-image: image-url('home_background.png');
 	background-size: cover;
 	background-attachment: fixed;
 	will-change: transform;
@@ -30,4 +30,10 @@ body:before{
 	left: 0;
 	top: 0;
 	bottom: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
 }

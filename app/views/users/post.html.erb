@@ -2,8 +2,8 @@
 <div class="manager-style mdl-layout mdl-js-layout">
   <main class="mdl-layout__content">
   	<div class="manager-style__main mdl-grid">
-  		<div class="mdl-cell mdl-cell--2-col manager-sidebar">
-  			<nav class="sidebar mdl-navigation ">
+  		<div class="mdl-cell mdl-cell--2-col mdl-card manager-sidebar">
+  			<nav class="sidebar mdl-navigation mdl-card__supporting-text">
           <span class="mdl-navigation__link"><%= link_to "主页", root_path %></span>
   				<span class="mdl-navigation__link"><%= link_to "个人", current_user %></span>
           <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user), class: "mdl-badge", data: {badge: 1}%></span>
@@ -11,14 +11,16 @@
           <span class="mdl-navigation__link"><%= link_to "退出", signout_path, method: 'delete' %></span>
   			</nav>
   		</div>
-  		<div class="mdl-cell mdl-cell--10-col manager-content">
-  			<%= link_to "文 章 管 理", posts_path %>
-        <% if @posts.any? %>
-          <h3>Posts (<%= @posts.count %>)</h3>
-          <nav class="posts">
-            <%= render @posts %>
-          </nav>
-        <% end %>
+  		<div class="mdl-cell mdl-cell--10-col mdl-card manager-content">
+        <div class="mdl-card__supporting-text">
+    			<%= link_to "文 章 管 理", posts_path %>
+          <% if @posts.any? %>
+            <h3>文章数量 (<%= @posts.count %>)</h3>
+            <nav class="posts">
+              <%= render @posts %>
+            </nav>
+          <% end %>
+        </div>
   		</div>
   	</div>
   </main>

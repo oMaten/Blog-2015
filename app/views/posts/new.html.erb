@@ -3,15 +3,24 @@
 	<main class="mdl-layout__content">
 		<div class="post-style__main mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col"></div>
-			<div class="mdl-cell mdl-cell--10-col post-content">
+			<div class="mdl-cell mdl-cell--10-col mdl-card mdl-shadow--4dp post-article">
 				<%= form_for(@post) do |f| %>
-					<div class="field">
-						<%= f.text_area :title, placeholder: "Add the title..." %>
+					<div class="mdl-card__supporting-text mdl-color-text--grey-700" >
+						<div class="mdl-textfield mdl-js-textfield article-textfield">
+					    <%= f.text_area :title, id: "title", class: "mdl-textfield__input", rows: "2" %>
+					    <label class="mdl-textfield__label" for="title">Title here...</label>
+					  </div>
 					</div>
-				  <div class="field">
-				    <%= f.text_area :content, placeholder: "Compose new post..." %>
-				  </div>
-				  <%= f.submit "Post", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+					<div class="mdl-card__supporting-text mdl-color-text--grey-700" >
+						<div class="mdl-textfield mdl-js-textfield article-textfield">
+					  	<%= f.text_area :content, id: "content", class: "mdl-textfield__input", rows: "30" %>
+					    <label class="mdl-textfield__label" for="content">Content here...</label>
+					  </div>
+					</div>
+					<div class="mdl-card__supporting-text article-btn">
+						<%= link_to '返回', posts_path, class: 'mdl-button mdl-js-button mdl-button--raised' %>
+					  <%= f.submit "创建", class: "mdl-button mdl-js-button mdl-button--raised article-btn__create" %>
+					</div>
 				<% end %>
 			</div>
 		</div>
