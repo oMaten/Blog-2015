@@ -8,6 +8,7 @@
 				background: #fff;
 				min-height: 500px;
 				position: relative;
+				overflow: inherit;
 				a{
 					line-height: 100px;
 				}
@@ -25,14 +26,18 @@
 			}
 			.mdl-card__supporting-text{
 				width: 97%;
+				i{
+					color: cadetblue;
+				}
 				.info{
 					float: left;
 					span{
 						display: block;
 					}
 				}
-				.favourite, .markbook, .share{
+				.favorite, .markbook, .share{
 					float: right;
+					display: inline-block;
 					margin-right: 10px;
 				}
 				h3{
@@ -41,14 +46,67 @@
 				p{
 					margin: 80px;
 				}
+				form{
+					width: 440px;
+					position: relative;
+					margin: 0 auto;
+					i{
+						position: relative;
+						top: -20px;
+					}
+					.mdl-textfield{
+						width: 400px;
+						color: #888888;
+						font-size: 14px;
+					}
+					.mdl-textfield__label:after{
+						background-color: cadetblue;
+					}
+				}
+				.post-comment{
+					min-height: 20px;
+					width: 100%;
+					.post-comment__header,.comment-repeat__header{
+						margin: 10px;
+						padding: 20px;
+						.face{
+							border-radius: 50%;
+							float: left;
+						}
+						.info{
+							margin:10px 0 0 20px;
+							float: left;
+							p{
+								margin: 0;
+								padding: 0;
+							}
+						}
+					}
+					.post-comment__content,.comment-repeat__content{
+						margin: 10px;
+						padding-top: 20px;
+						p{
+							margin: 10px;
+							padding: 10px;
+						}
+					}
+					.post-comment__tab{
+						padding: 0 40px;
+					}
+					.post-comment__repeat{
+						padding: 10px 0 0 140px;
+					}
+				}
 			}
 			.post-nav{
 				margin-bottom: 100px;
 				.post-nav__pre{
 					float: left;
+					color: #fff;
 				}
 				.post-nav__next{
 					float: right;
+					color: #fff;
 				}
 			}
 			.post-article{
@@ -60,6 +118,7 @@
 						display: block;
 						width: 700px;
 						margin: 0 auto;
+						color: #000;
 					}
 					.article-btn{
 						max-width: 300px;

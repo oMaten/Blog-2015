@@ -3,7 +3,10 @@ before_filter :signed_in_user, only: [:index, :edit, :show, :destroy]
 before_filter :correct_user,   only: [:edit, :update]
 before_filter :admin_user, only: :destroy
 	def show
+		@user = current_user
 		@post = Post.find(params[:id])
+		@pre = Post.find_by_id(@post.id-1)
+		@next = Post.find_by_id(@post.id+1)
 	end
 
 	def new

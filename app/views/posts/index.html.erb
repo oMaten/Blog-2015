@@ -5,8 +5,9 @@
 			<div class="mdl-cell mdl-cell--1-col"></div>
 			<div class="mdl-cell mdl-cell--10-col mdl-card post-content">
 				<button class="mdl-button mdl-js-button mdl-button--fab">
-					<%= link_to content_tag(:i, "add",:class=>'material-icons mdl-color-text--white'), new_post_path, :class=>'post-add-icon' %>
+					<%= link_to content_tag(:i, "add",:class=>'material-icons mdl-color-text--white', :id=>'create-icon'), new_post_path, :class=>'post-add-icon' %>
 				</button>
+				<div class="mdl-tooltip" for="create-icon">创建新文章</div>
 				<%= link_to "返回", @user %>
 			</div>
 		</div>

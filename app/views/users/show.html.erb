@@ -3,7 +3,7 @@
   <main class="mdl-layout__content">
   	<div class="manager-style__main mdl-grid">
   		<div class="mdl-cell mdl-cell--2-col mdl-card manager-sidebar">
-  			<nav class="sidebar mdl-navigation mdl-card__supporting-text">
+  			<nav class="sidebar mdl-navigation mdl-card__supporting-text mdl-color-text--grey-700">
   				<span class="mdl-navigation__link"><%= link_to "主页", root_path %></span>
           <span class="mdl-navigation__link"><%= link_to "个人", current_user %></span>
           <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user), class: "mdl-badge", data: {badge: 1}%></span>
@@ -12,7 +12,7 @@
   			</ul>
   		</div>
   		<div class="mdl-cell mdl-cell--10-col mdl-card manager-content">
-        <div class="mdl-card__supporting-text">
+        <div class="mdl-card__supporting-text mdl-color-text--grey-700">
           <%= form_for(@user) do |f| %>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <%= f.label :name, class: "mdl-textfield__label"%>

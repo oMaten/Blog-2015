@@ -6,33 +6,90 @@
         <div class="mdl-card__media mdl-color-text--grey-50"></div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-700 ">
           <div class="info">
+            <% if admin_in? %>
+              <%= link_to @user do %>
+                <i id="icon-exit" class="material-icons md-32">exit_to_app</i>
+                <div class="mdl-tooltip" for="icon-exit">返回主页</div>
+              <% end %>
+            <% else %>
+              <%= link_to root_path do %>
+                <i id="icon-exit" class="material-icons">exit_to_app</i>
+                <div class="mdl-tooltip" for="icon-exit">返回首页</div>
+              <% end %>
+            <% end %>
             <span><%= time_ago_in_words(@post.created_at) %></span>
             <span>ago</span>
           </div>
-          <div class="favourite">
-            <i class="material-icons">favorite</i>
+          <div class="favorite">
+            <i id="icon-favorite" class="material-icons">favorite</i>
+            <div class="mdl-tooltip" for="icon-favorite">喜欢</div>
           </div>
           <div class="markbook">
-            <i class="material-icons">bookmark</i>
+            <i id="icon-markbook" class="material-icons">bookmark</i>
+            <div class="mdl-tooltip" for="icon-markbook">马克一下</div>
           </div>
           <div class="share">
-            <i class="material-icons">share</i>
+            <i id="icon-share" class="material-icons">share</i>
+            <div class="mdl-tooltip" for="icon-share">分享链接</div>
           </div>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-700">
           <h3><%= @post.title %></h3>
           <p><%= @post.content %></p>
         </div>
-        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text"></div>
+        <div class="mdl-color--grey-300 mdl-card__supporting-text">
+          <form>
+            <div class="mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "4" id="comment" ></textarea>
+              <label class="mdl-textfield__label" for="comment">评论...</label>
+            </div>
+            <i class="material-icons md-32">done</i>
+          </form>
+          <div class="post-comment mdl-color-text--grey-700">
+            <div class="post-comment__header">
+              <%= image_tag("face.jpeg", :size=>"60x60", :class=>"face") %>
+              <span class="info">
+                <p>Murolq</p>
+                <p>2 days ago</p>
+              </span>
+            </div>
+            <div class="post-comment__content">
+              <p>抠门女士认为，出于种种原因没有其他选项的时候快餐店也是不错的选择呢！日本很多人流量大的快餐店都是使用自动贩卖机下单，可以提前熟悉一下，免得人多时影响后面排队的人点餐。</p>
+            </div>
+            <div class="post-comment__tab">
+              <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">thumb_up</i>
+              </div>
+              <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">thumb_down</i>
+              </div>
+              <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons">share</i>
+              </div>
+            </div>
+            <div class="post-comment__repeat">
+              <div class="comment-repeat__header">
+                <%= image_tag("face.jpeg", :size=>"60x60", :class=>"face") %>
+                <span class="info">
+                  <p>Murolq</p>
+                  <p>1 days ago</p>
+                </span>
+              </div>
+              <div class="comment-repeat__content">
+                <p>喝完小酒抠门先生摸了摸兜，只找到几个硬币（没错出门在外抠门先生管钱），于是在地图里查找取款机的位置。</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="mdl-cell mdl-cell--12-col post-nav">
-        <%= link_to('#', :class=>'post-nav__pre') do %>
+        <%= link_to(@pre, :class=>'post-nav__pre') do %>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
             <i class="material-icons">arrow_back</i>
           </button>
           Previous
         <% end %>
-        <%= link_to('#', :class=>'post-nav__next') do %>
+        <%= link_to(@next, :class=>'post-nav__next') do %>
           Next
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
             <i class="material-icons">arrow_forward</i>
