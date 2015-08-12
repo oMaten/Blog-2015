@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150805060622) do
+ActiveRecord::Schema.define(:version => 20150811074342) do
 
   create_table "posts", :force => true do |t|
     t.text     "content"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(:version => 20150805060622) do
   end
 
   add_index "posts", ["user_id", "created_at"], :name => "index_posts_on_user_id_and_created_at"
+
+  create_table "replies", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "replies", ["post_id", "user_id", "created_at"], :name => "index_replies_on_post_id_and_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

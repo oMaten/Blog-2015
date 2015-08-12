@@ -5,7 +5,10 @@ Blog2015::Application.routes.draw do
     end
   end
   resources :sessions, only:[:new, :create, :destroy]
-  resources :posts
+  resources :posts do
+    resources :replies, only: [:create]
+  end
+  resources :replies, only: [:destroy]
 
   root to: 'static_pages#home'
 
