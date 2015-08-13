@@ -36,20 +36,28 @@
 							padding: 0 15px;
 							letter-spacing: 10px;
 							text-decoration: none;
+							color: cadetblue;
 						}
 						a:after{
 							letter-spacing: normal;
+							background-color: cadetblue;
 						}
 	    		}
 				}
 			}
 			.manager-content{
+				#article-icon{
+					color: cadetblue;
+				}
 				.mdl-card__actions{
 					.posts{
 						li{
 							margin: 10px 0px;
 							span{
 								margin: 0px 20px;
+								a{
+									color: cadetblue;
+								}
 							}
 						}
 					}

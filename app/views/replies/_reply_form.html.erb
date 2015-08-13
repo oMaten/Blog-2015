@@ -3,7 +3,7 @@
     <%= f.text_area :content, class: "mdl-textfield__input", :rows=>"4", :id=>"comment" %>
     <%= f.label :content, class: "mdl-textfield__label", :for=>"comment" %>
   </div>
-  <%= f.submit do %>
-    <i class="material-icons md-32">done</i>
+  <%= button_tag(type: "submit") do %>
+    <%= content_tag(:i, 'done', :class=>'material-icons md-32') %>
   <% end %>
 <% end %>

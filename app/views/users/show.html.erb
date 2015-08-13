@@ -6,7 +6,7 @@
   			<nav class="sidebar mdl-navigation mdl-card__supporting-text mdl-color-text--grey-700">
   				<span class="mdl-navigation__link"><%= link_to "主页", root_path %></span>
           <span class="mdl-navigation__link"><%= link_to "个人", current_user %></span>
-          <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user), class: "mdl-badge", data: {badge: 1}%></span>
+          <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user) %></span>
           <span class="mdl-navigation__link"><%= link_to "短讯", '#' %></span>
           <span class="mdl-navigation__link"><%= link_to "退出", signout_path, method: 'delete' %></span>
   			</ul>

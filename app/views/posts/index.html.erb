@@ -4,11 +4,40 @@
 		<div class="post-style__main mdl-grid">
 			<div class="mdl-cell mdl-cell--1-col"></div>
 			<div class="mdl-cell mdl-cell--10-col mdl-card post-content">
-				<button class="mdl-button mdl-js-button mdl-button--fab">
+				<button class="mdl-button mdl-js-button mdl-button--fab create-post">
 					<%= link_to content_tag(:i, "add",:class=>'material-icons mdl-color-text--white', :id=>'create-icon'), new_post_path, :class=>'post-add-icon' %>
 				</button>
 				<div class="mdl-tooltip" for="create-icon">创建新文章</div>
-				<%= link_to "返回", @user %>
+				<div class="post-table">
+					<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>文章名称</th>
+								<th>创建日期</th>
+								<th>修改日期</th>
+								<th>评论数</th>
+								<th>管理</th>
+							</tr>
+						</thead>
+						<% if @posts.any? %>
+							<tbody>
+								<% @posts.each do |post| %>
+									<tr>
+										<th><%= post.id %></th>
+										<th><%= post.title %></th>
+										<th><%= l post.created_at, :format => '%F' %></th>
+										<th><%= l post.updated_at, :format => '%F' %></th>
+										<th><%= post.replies.count %></th>
+										<th>删除</th>
+									</tr>
+								<% end %>
+							</tbody>
+						<% end %>
+					</table>
+					<%= paginate @posts %>
+				</div>
+				<span><%= link_to "返回", @user %></span>
 			</div>
 		</div>
 	</main>

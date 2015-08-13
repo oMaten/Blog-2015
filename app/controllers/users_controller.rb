@@ -29,6 +29,7 @@ before_filter :admin_user, only: :destroy
     @user = User.find(params[:id])
     @posts = @user.posts
   end
+
   def update
     if @user.update_attributes(params[:user])
       sign_in @user

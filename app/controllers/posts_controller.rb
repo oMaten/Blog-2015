@@ -20,6 +20,7 @@ before_filter :admin_user, only: :destroy
 
 	def index
 		@user = current_user
+		@posts = current_user.posts.page(params[:page]).per(5)
 	end
 
 	def create
