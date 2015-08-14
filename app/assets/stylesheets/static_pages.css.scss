@@ -10,21 +10,11 @@
 			background-color: #ffffff;
 			background-size: cover;
 			background-image: image-url('banner.png');
+			height: 330px;
 		}
 		.blog-message__img{
 			background-color: rgba(255,255,255,1);
 			background-size: cover;
-			.message-logo{
-				width: 120px;
-				height: 120px;
-				background: image-url('logo.png') no-repeat;
-				background-size: 50% 50%;
-				background-position: 50% 50%;
-				border-radius: 50%;
-				overflow: hidden;
-				margin: 20px auto;
-				position: relative;
-			}
 		}
 		.blog-banner__title{
 			background-color: rgba(255,255,255,.6);
@@ -35,8 +25,27 @@
 			background-color: #D9D9D9;
 		}
 		.mdl-card{
+			.blog-style-bg-1:before,.blog-style-bg-1:after{
+				color: #fff;
+				display: block;
+				font-size: 80px;
+			}
+			.blog-style-bg-1:before{
+				content: "“";
+				margin-top: 50px;
+				float: left;
+			}
+			.blog-style-bg-1:after{
+				content: "”";
+				float: right;
+			}
 			.blog-style-bg-1{
-				background-image: image-url('home_img_01.png');
+				text-align: center;
+				background-color: cadetblue;
+				a{
+					color: #fff;
+					line-height: 100px;
+				}
 			}
 			.blog-style-bg-2{
 				background-image: image-url('home_img_02.png');
@@ -45,8 +54,15 @@
 				background-image: image-url('home_img_03.png');
 			}
 			.mdl-card__media{
+				background-color: cadetblue;
 				padding: 20px;
-				min-height: 280px;
+				ul{
+					list-style: none;
+					li{
+						float: left;
+						margin: 12px;
+					}
+				}
 			}
 			.mdl-card__supporting-text{
 				min-height: 62px;

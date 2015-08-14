@@ -5,6 +5,7 @@ before_filter :admin_user, only: :destroy
 	def show
 		@user = current_user
 		@post = Post.find(params[:id])
+		@posts = current_user.posts
 		@replies = @post.replies
 		@pre = Post.find_by_id(@post.id-1)
 		@next = Post.find_by_id(@post.id+1)
@@ -20,7 +21,7 @@ before_filter :admin_user, only: :destroy
 
 	def index
 		@user = current_user
-		@posts = current_user.posts.page(params[:page]).per(5)
+		@posts = current_user.posts.page(params[:page]).per(10)
 	end
 
 	def create

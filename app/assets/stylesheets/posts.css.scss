@@ -5,9 +5,6 @@
 		.post-style__main{
 			max-width: 1010px;
 			.post-content{
-				background: #fff;
-				min-height: 500px;
-				position: relative;
 				overflow: inherit;
 				a{
 					color: cadetblue;
@@ -17,15 +14,21 @@
 					top: -20px;
 					left: -20px;
 					background-color: #DEB887;
+					z-index: 999;
 					.post-add-icon{
 						display: block;
 						height: inherit;
 						z-index: 999;
 					}
 				}
-				.post-table{
-					padding: 50px;
-				}
+			}
+			.pagination{
+				display: inline-block;
+				float: left;
+			}
+			.post-return-btn{
+				margin-left: 10px;
+				float: right;
 			}
 			.mdl-card__supporting-text{
 				width: 97%;

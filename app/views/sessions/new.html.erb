@@ -1,10 +1,10 @@
-<% provide(:title, "Sign in") %>
+<% provide(:title, "账号登陆") %>
 <div class="session-style mdl-layout mdl-js-layout">
 	<main class="mdl-layout__content">
 		<div class="session-style__signin mdl-grid">
 			<div class="mdl-cell mdl-cell--2-col"></div>
 			<div class="mdl-cell mdl-cell--8-col session-signin__form">
-				<h3>Sign in</h3>
+				<h3>账号登陆</h3>
 				<%= form_for(:session, url: sessions_path) do |f| %>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			      <%= f.label :email, class: "mdl-textfield__label" %>
@@ -15,10 +15,10 @@
 			      <%= f.password_field :password, class: "mdl-textfield__input" %>
 			    </div>
 			    <div class="mdl-grid submit-grid-style">
-		      	<%= f.submit "Sign in", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+		      	<%= f.submit "登陆", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
 		      </div>
 		    <% end %>
-		    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+		    <p>新用户? <%= link_to "新建账号！", signup_path %></p>
 			</div>
 		</div>
 	</main>
