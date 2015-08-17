@@ -17,6 +17,8 @@ before_filter :admin_user, only: :destroy
 	end
 
 	def destroy
+		Post.find(params[:id]).destroy
+    redirect_to posts_path
 	end
 
 	def index
@@ -33,4 +35,9 @@ before_filter :admin_user, only: :destroy
   		render 'new'
   	end
 	end
+
+	private
+		def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
 end

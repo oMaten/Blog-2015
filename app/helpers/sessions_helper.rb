@@ -10,7 +10,7 @@ module SessionsHelper
       redirect_to signin_path, notice: "Please login first."
     end
   end
-
+  
 	def current_user=(user)
     @current_user = user
   end

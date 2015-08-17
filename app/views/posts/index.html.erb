@@ -28,7 +28,13 @@
 									<th><%= l post.created_at, :format => '%F' %></th>
 									<th><%= l post.updated_at, :format => '%F' %></th>
 									<th><%= post.replies.count %></th>
-									<th>删除</th>
+									<th>
+										<% if admin_in? %>
+								    	<%= link_to "删除", post, method: :delete, data:{ confirm: "您确定要删除吗?" } %>
+								    <% else %>
+								    	<%= 没有权限 %>
+								    <% end %>
+									</th>
 								</tr>
 							<% end %>
 						</tbody>

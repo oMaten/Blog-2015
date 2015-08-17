@@ -21,8 +21,9 @@ body{
 body:before{
 	content: "";
 	z-index: -1;
-	background-image: image-url('home_background.png');
+	background: image-url('homepage_background.jpg') no-repeat;
 	background-size: cover;
+	background-position: 50%;
 	background-attachment: fixed;
 	will-change: transform;
 	position: fixed;
