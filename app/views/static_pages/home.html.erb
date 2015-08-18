@@ -6,10 +6,10 @@
         <div class="mdl-card__supporting-text blog-banner__title">
         </div>
       </div>
-      <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--5dp">
-        <div class="mdl-card__media mdl-card--expand">
-        </div>
-        <div class="mdl-card__supporting-text blog-message__title">
+      <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--5dp blog-user__info">
+        <div class="user-face__filter"></div>
+        <div class="user-face"><%= image_tag("face_01.jpeg") %></div>
+        <!-- <div class="mdl-card__supporting-text blog-message__title">
           <button id="demo-menu-top-left" class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">more_vert</i>
           </button>
@@ -24,7 +24,7 @@
               <li class="mdl-menu__item"><%= link_to "信息", '#' %></li>
             <% end %>
           </ul>
-        </div>
+        </div> -->
       </div>
       <% @posts.each do |post| %>
         <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--5dp">
@@ -33,7 +33,11 @@
               <%= link_to post.title, post %>
             </h3>
           </div>
-          <div class="mdl-card__supporting-text"></div>
+          <div class="mdl-card__actions mdl-card--border">
+            <h5><%= post.user.name %></h5>
+            <h5>发布于<%= l post.created_at, :format => '%F' %></h5>
+            <p>回复<%= post.replies.count %></p>
+          </div>
         </div>
       <% end %>
       <%= render 'layouts/footer' %>

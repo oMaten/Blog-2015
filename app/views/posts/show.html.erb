@@ -35,7 +35,7 @@
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-700">
           <h3><%= @post.title %></h3>
-          <p><%= @post.content %></p>
+          <span class="content-text"><%=raw @post.content %></span>
         </div>
         <div class="mdl-color--grey-300 mdl-card__supporting-text">
           <%= render 'replies/reply_form' %>

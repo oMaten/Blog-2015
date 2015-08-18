@@ -8,8 +8,33 @@
 				padding: 20px;
 				background-color: #FFFAFA;
 				text-align: center;
-				.mdl-textfield{
-					display: block;
+				h3{
+					letter-spacing: 20px;
+					font-weight: 100;
+					font-family: \6807\6977\4F53;
+				}
+				.new_user{
+					display: flex;
+					display: -webkit-flex;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+	    		flex-direction: column;
+	    		align-items: center;
+	    		-webkit-align-items: center;
+	    		-ms-align-items: center;
+	    		.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label{
+	    			color: #A5AAB9;
+	    			font-weight: 100;
+	    			font-size: 11px;
+	    		}
+					.mdl-textfield{
+						.mdl-textfield__label:after{
+							background-color: #CED8F6;
+						}
+					}
+					.mdl-button{
+						background-color: #CED8F6;
+					}
 				}
 			}
 		}
@@ -49,6 +74,39 @@
 				}
 			}
 			.manager-content{
+				display: flex;
+				display: -webkit-flex;
+				flex-direction: column;
+				align-items: center;
+				.mdl-card__supporting-text{
+					display: flex;
+					display: -webkit-flex;
+					flex-direction: row;
+					align-items: flex-start;
+					flex-basis: auto;
+					.edit_user{
+						display: flex;
+						display: -webkit-flex;
+						flex-direction: column;
+						align-items: flex-end;
+						flex-basis: 100%;
+						flex-wrap: wrap;
+						.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label{
+		    			color: #A5AAB9;
+		    			font-weight: 100;
+		    			font-size: 11px;
+		    		}
+						.mdl-textfield{
+							.mdl-textfield__label:after{
+								background-color: #CED8F6;
+							}
+						}
+						.mdl-button{
+							background-color: #CED8F6;
+							color: #fff;
+						}
+					}
+				}
 				#article-icon{
 					color: cadetblue;
 				}

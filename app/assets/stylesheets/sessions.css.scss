@@ -7,10 +7,46 @@
 			.session-signin__form{
 				padding: 20px;
 				background-color: #ffffff;
-				text-align: center;
-				.mdl-textfield{
-					display: block;
-				}
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+    		flex-direction: column;
+    		align-items: center;
+    		-webkit-align-items: center;
+    		-ms-align-items: center;
+    		form{
+    			display: -webkit-flex;
+					display: flex;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+	    		flex-direction: column;
+	    		align-items: center;
+	    		-webkit-align-items: center;
+	    		-ms-align-items: center;
+	    		.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label{
+	    			color: #A5AAB9;
+	    			font-weight: 100;
+	    			font-size: 11px;
+	    		}
+					.mdl-textfield{
+						.mdl-textfield__label:after{
+							background-color: #CED8F6;
+						}
+					}
+					.mdl-button{
+						background-color: #CED8F6;
+					}
+    		}
+    		p{
+    			margin-top: 20px;
+    			a{
+    				color: #658B2B;
+    				font-family: \6807\6977\4F53;
+    				font-size: 16px;
+    				font-weight: 100;
+    			}
+    		}
 			}
 		}
 	}
