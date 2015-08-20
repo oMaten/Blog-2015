@@ -7,10 +7,10 @@ module SessionsHelper
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Please login first."
+      redirect_to signin_path
     end
   end
-  
+
 	def current_user=(user)
     @current_user = user
   end

@@ -1,4 +1,5 @@
 class RepliesController < ApplicationController
+	before_filter :signed_in_user, only: [:create]
 	def create
 		@post = Post.find(params[:post_id])
 		@reply = @post.replies.build(params[:reply])
@@ -9,4 +10,5 @@ class RepliesController < ApplicationController
   		render 'static_pages/home'
   	end
 	end
+
 end

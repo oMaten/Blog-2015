@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-before_filter :signed_in_user, only: [:index, :edit, :show, :destroy]
+before_filter :signed_in_user, only: [:index, :edit, :destroy]
 before_filter :correct_user,   only: [:edit, :update]
 before_filter :admin_user, only: :destroy
 	def show
-		@user = current_user
+		@user = User.find(1);
 		@post = Post.find(params[:id])
-		@posts = current_user.posts
+		@posts = @user.posts
 		@replies = @post.replies
 		@pre = Post.find_by_id(@post.id-1)
 		@next = Post.find_by_id(@post.id+1)

@@ -27,7 +27,7 @@ before_filter :admin_user, only: :destroy
 
   def post
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = Post.all(:conditions=>{:created_at=>(1.days.ago)..(Time.now)})
   end
 
   def update
@@ -40,6 +40,7 @@ before_filter :admin_user, only: :destroy
   end
 
   private
+
     def correct_user
       @user = User.find(params[:id])
       unless current_user?(@user)

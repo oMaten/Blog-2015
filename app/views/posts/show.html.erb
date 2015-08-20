@@ -6,16 +6,9 @@
         <div class="mdl-card__media mdl-color-text--grey-50"></div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-700 ">
           <div class="info">
-            <% if admin_in? %>
-              <%= link_to @user do %>
-                <i id="icon-exit" class="material-icons md-32">exit_to_app</i>
-                <div class="mdl-tooltip" for="icon-exit">返回主页</div>
-              <% end %>
-            <% else %>
-              <%= link_to root_path do %>
-                <i id="icon-exit" class="material-icons">exit_to_app</i>
-                <div class="mdl-tooltip" for="icon-exit">返回首页</div>
-              <% end %>
+            <%= link_to root_path do %>
+              <i id="icon-exit" class="material-icons">exit_to_app</i>
+              <div class="mdl-tooltip" for="icon-exit">返回首页</div>
             <% end %>
             <span><%= time_ago_in_words(@post.created_at) %></span>
             <span>ago</span>

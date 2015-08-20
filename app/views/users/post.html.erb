@@ -13,18 +13,20 @@
   		</div>
   		<div class="mdl-cell mdl-cell--10-col mdl-card manager-content">
         <div class="mdl-card__supporting-text mdl-color-text--grey-700">
-    			<%= link_to posts_path do %>
+    			<%= link_to posts_path, class: "btn-posts-more" do %>
             <i id="article-icon" class="material-icons">chrome_reader_mode</i>
             <div class="mdl-tooltip" for="article-icon">管理文章</div>
           <% end %>
           <% if @posts.any? %>
-            <h4>文章数量 (<%= @posts.count %>) 篇</h4>
+            <h4>文章总数 (<%= Post.all.count %>) 篇</h4>
+            <h4>最近文章 (<%= @posts.count %>) 篇</h4>
           <% end %>
         </div>
         <div class="mdl-card__actions mdl-card--border">
           <% if @posts.any? %>
             <nav class="posts">
               <%= render @posts %>
+              <li><span>更多文章...</span></li>
             </nav>
           <% end %>
         </div>

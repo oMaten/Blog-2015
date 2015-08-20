@@ -49,11 +49,6 @@
 			}
 			.blog-message__title{
 				background-color: rgba(0,0,0,.7);
-				.mdl-menu__item{
-					a{
-						color:#000;
-					}
-				}
 			}
 		}
 		.blog-message__img{
@@ -64,6 +59,20 @@
 			background-color: rgba(255,255,255,.6);
 			color: #CCFFCC;
 			font-size: 16px;
+		}
+		.blog-main__post{
+			background-color: rgba(255,255,255,.6);
+			transition:background-color .4s;
+			-moz-transition:background-color .4s;
+			-webkit-transition:background-color .74;
+			-o-transition:background-color .4s;
+		}
+		.blog-main__post:hover{
+			background-color: rgba(255,255,255,.85);
+			transition:background-color .7s;
+			-moz-transition:background-color .7s;
+			-webkit-transition:background-color .7s;
+			-o-transition:background-color .7s;
 		}
 		.mdl-card{
 			.blog-style-bg-1:before,.blog-style-bg-1:after{
@@ -82,7 +91,7 @@
 			}
 			.blog-style-bg-1{
 				text-align: center;
-				background-color: #B3B3B3;
+				background: none;
 				a{
 					color: #000;
 					line-height: 100px;
@@ -92,7 +101,7 @@
 				}
 			}
 			.mdl-card__media{
-				background-color: #fff;
+				background: none;
 				padding: 20px;
 				ul{
 					list-style: none;
@@ -103,7 +112,7 @@
 				}
 			}
 			.mdl-card__supporting-text{
-				min-height: 62px;
+				min-height: 32px;
 				width: 100%;
 			}
 			.mdl-card__actions{
@@ -125,6 +134,24 @@
 					align-self: baseline;
 				}
 			}
+		}
+	}
+}
+.home-btn{
+	background: #fff;
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	margin-left: 60px;
+	margin-top: 40px;
+	z-index: 999;
+}
+.mdl-menu__container{
+	margin-top: 2px;
+	.mdl-menu__item{
+		a{
+			color:#000;
 		}
 	}
 }
