@@ -32,7 +32,7 @@
         </div>
         <div class="mdl-color--grey-300 mdl-card__supporting-text">
           <%= render 'replies/reply_form' %>
-          <div class="post-comment mdl-color-text--grey-700">
+          <div id="replies" class="post-comment mdl-color-text--grey-700">
             <% if @post.replies.any? %>
               <%= render @replies %>
             <% end %>

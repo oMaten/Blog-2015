@@ -32,6 +32,7 @@
 			}
 			.mdl-card__supporting-text{
 				width: 97%;
+				background-color: rgba(244,244,244,.7);
 				i{
 					color: cadetblue;
 				}
@@ -67,6 +68,9 @@
 						top: -20px;
 						background: none;
 						border: none;
+						i{
+							text-shadow: 3px 0px 6px #898989;
+						}
 					}
 					button:hover{
 						border-radius: 50%;
@@ -83,35 +87,40 @@
 				.post-comment{
 					min-height: 20px;
 					width: 100%;
-					.post-comment__header,.comment-reply__header{
-						margin: 10px;
-						padding: 20px;
-						.face{
-							border-radius: 50%;
-							float: left;
-						}
-						.info{
-							margin:10px 0 0 20px;
-							float: left;
-							p{
-								margin: 0;
-								padding: 0;
+					.user-comment{
+						padding-bottom: 10px;
+						border-top: 1px solid rgba(0,0,0,.1);
+						.post-comment__header,.comment-reply__header{
+							margin: 10px;
+							padding: 20px;
+							.face{
+								border-radius: 50%;
+								float: left;
+								border: 3px solid rgba(255,255,255,.8);
+							}
+							.info{
+								margin:10px 0 0 20px;
+								float: left;
+								p{
+									margin: 0;
+									padding: 0;
+								}
 							}
 						}
-					}
-					.post-comment__content,.comment-reply__content{
-						margin: 10px;
-						padding-top: 20px;
-						p{
+						.post-comment__content,.comment-reply__content{
 							margin: 10px;
-							padding: 10px;
+							padding-top: 20px;
+							p{
+								margin: 10px;
+								padding: 10px;
+							}
 						}
-					}
-					.post-comment__tab{
-						padding: 0 40px;
-					}
-					.post-comment__reply{
-						padding: 10px 0 0 140px;
+						.post-comment__tab{
+							padding: 0 40px;
+						}
+						.post-comment__reply{
+							padding: 10px 0 0 140px;
+						}
 					}
 				}
 			}
@@ -152,4 +161,11 @@
 			}
 		}
 	}
+}
+.blur-box{
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
 }

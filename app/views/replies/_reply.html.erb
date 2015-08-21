@@ -1,21 +1,23 @@
-<div class="post-comment__header">
-  <%= image_tag("face_01.jpeg", :size=>"60x60", :class=>"face") %>
-  <span class="info">
-    <p><%= reply.user.name %></p>
-    <p><%= time_ago_in_words(reply.created_at) %>ago</p>
-  </span>
-</div>
-<div class="post-comment__content">
-  <p><%= reply.content %></p>
-</div>
-<div class="post-comment__tab">
-  <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons">thumb_up</i>
+<div class="user-comment">
+  <div class="post-comment__header">
+    <%= image_tag("face_01.jpeg", :size=>"60x60", :class=>"face") %>
+    <span class="info">
+      <p><%= reply.user.name %></p>
+      <p><%= time_ago_in_words(reply.created_at) %> ago</p>
+    </span>
   </div>
-  <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons">thumb_down</i>
+  <div class="post-comment__content">
+    <p><%= reply.content %></p>
   </div>
-  <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons">share</i>
+  <div class="post-comment__tab">
+    <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+      <i class="material-icons">thumb_up</i>
+    </div>
+    <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+      <i class="material-icons">thumb_down</i>
+    </div>
+    <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+      <i class="material-icons">share</i>
+    </div>
   </div>
 </div>

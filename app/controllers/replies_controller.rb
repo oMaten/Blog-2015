@@ -5,7 +5,9 @@ class RepliesController < ApplicationController
 		@reply = @post.replies.build(params[:reply])
 		@reply.user = current_user
   	if @reply.save
-  		redirect_to @post
+  		respond_to do |format|
+	      format.js
+    	end
   	else
   		render 'static_pages/home'
   	end
