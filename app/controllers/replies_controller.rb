@@ -12,5 +12,4 @@ class RepliesController < ApplicationController
   		render 'static_pages/home'
   	end
 	end
-
 end
