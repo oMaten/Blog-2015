@@ -13,7 +13,7 @@ before_filter :admin_user, only: :destroy
       sign_in @user
       redirect_to @user
     else
-      render 'new'
+      redirect_to 'static_pages/home'
     end
   end
 

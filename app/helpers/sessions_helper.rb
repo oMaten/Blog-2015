@@ -7,12 +7,13 @@ module SessionsHelper
   def signed_in_user
     unless signed_in?
       store_location
-      # respond_to do |format|
-      #   format.js do
-      #     return head 401
-      #   end
-      # end
-      render :js => "$('.main-layout').addClass('filter-blur');$('.session-block').show();";
+      respond_to do |format|
+        format.js do
+          return head 401
+        end
+      end
+      # render :js => "$('.main-layout').addClass('filter-blur');
+      #               $('.session-block').fadeIn('slow');";
     end
   end
 

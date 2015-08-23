@@ -2,6 +2,11 @@
 	<div class="session-style__signin mdl-grid">
 		<div class="mdl-cell mdl-cell--2-col"></div>
 		<div class="mdl-cell mdl-cell--8-col session-signin__form mdl-shadow--4dp mdl-card">
+			<a id="close" href="javascript:void(0);">
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+					<i class="material-icons">clear</i>
+				</button>
+			</a>
 			<h3>账号登陆</h3>
 			<%= form_for(:session, url: sessions_path) do |f| %>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

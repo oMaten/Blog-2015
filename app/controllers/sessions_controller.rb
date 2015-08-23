@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			sign_in @user
 			redirect_to @user
 		else
-      render 'new'
+      render 'static_pages/home'
 		end
 	end
 

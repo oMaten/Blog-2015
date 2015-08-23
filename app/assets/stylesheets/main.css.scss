@@ -17,18 +17,27 @@ body{
 	width: 100%;
 	min-height: 100%;
 	display: block;
+	background-color: #000;
 }
 .filter-blur{
 	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
 }
 .session-block{
 	display: none;
 	.mdl-layout__content{
 		width: 100%;
-		padding-top: 200px;
+		padding-top: 100px;
 		padding-bottom: 100px;
 		.session-style__signin{
 			max-width: 900px;
+			a{
+				color: rgba(0,0,0,.85);
+				align-self: flex-end;
+			}
 			h3{
 				color: #838484;
 				letter-spacing: 20px;

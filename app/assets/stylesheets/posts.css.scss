@@ -46,6 +46,7 @@
 					float: right;
 					display: inline-block;
 					margin-right: 10px;
+					cursor: pointer;
 				}
 				h3{
 					text-align: center;
@@ -64,16 +65,27 @@
 					position: relative;
 					margin: 0 auto;
 					button{
+						cursor: pointer;
 						position: relative;
 						top: -20px;
 						background: none;
 						border: none;
 						i{
-							text-shadow: 3px 0px 6px #898989;
+							text-shadow: none;
+							transition: text-shadow .45s;
+							-moz-transition: text-shadow .45s;
+							-webkit-transition: text-shadow .45s;
+							-o-transition: text-shadow .45s;
 						}
 					}
 					button:hover{
-						border-radius: 50%;
+						i{
+							text-shadow: 3px 0px 6px #898989;
+							transition: text-shadow .85s;
+							-moz-transition: text-shadow .85s;
+							-webkit-transition: text-shadow .85s;
+							-o-transition: text-shadow .85s;
+						}
 					}
 					.mdl-textfield{
 						width: 400px;
