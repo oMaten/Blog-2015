@@ -17,10 +17,8 @@
             <i id="article-icon" class="material-icons">chrome_reader_mode</i>
             <div class="mdl-tooltip" for="article-icon">管理文章</div>
           <% end %>
-          <% if @posts.any? %>
-            <h4>文章总数 (<%= Post.all.count %>) 篇</h4>
-            <h4>最近文章 (<%= @posts.count %>) 篇</h4>
-          <% end %>
+          <h4>文章总数 (<%= Post.all.count %>) 篇</h4>
+          <h4>最近文章 (<%= @posts.count %>) 篇</h4>
         </div>
         <div class="mdl-card__actions mdl-card--border">
           <% if @posts.any? %>
