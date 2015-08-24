@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 before_filter :signed_in_user, only: [:index, :edit, :destroy]
-before_filter :correct_user,   only: [:edit, :update]
-before_filter :admin_user, only: :destroy
+before_filter :admin_user, only: [:destroy, :edit, :update]
 	def show
 		@user = User.find(1);
 		@post = Post.find(params[:id])
@@ -9,6 +8,19 @@ before_filter :admin_user, only: :destroy
 		@replies = @post.replies
 		@pre = Post.find_by_id(@post.id-1)
 		@next = Post.find_by_id(@post.id+1)
+	end
+
+	def edit
+		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		if @post.update_attributes(params[:post])
+      redirect_to @post
+    else
+      render 'edit'
+    end
 	end
 
 	def new

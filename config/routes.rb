@@ -6,7 +6,7 @@ Blog2015::Application.routes.draw do
   end
   resources :sessions, only:[:new, :create, :destroy]
   resources :posts do
-    resources :replies, only: [:create]
+    resources :replies, only: [:create, :index]
   end
   resources :replies, only: [:destroy]
 

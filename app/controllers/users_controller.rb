@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
 before_filter :correct_user,   only: [:edit, :update, :show, :post]
-before_filter :admin_user, only: :destroy
+before_filter :admin_user, only: [:destroy, :show, :update, :post, :index]
 
   def new
   	@user = User.new
@@ -15,6 +15,11 @@ before_filter :admin_user, only: :destroy
     else
       redirect_to 'static_pages/home'
     end
+  end
+
+  def index
+    @user = User.find(1)
+    @users = User.page(params[:page]).per(10)
   end
 
   def show
@@ -31,6 +36,7 @@ before_filter :admin_user, only: :destroy
   end
 
   def update
+    @user = current_user
     if @user.update_attributes(params[:user])
       sign_in @user
       redirect_to @user

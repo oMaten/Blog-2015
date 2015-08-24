@@ -1,0 +1,53 @@
+<% provide(:title, @user.name) %>
+<div class="manager-style mdl-layout mdl-js-layout">
+  <main class="mdl-layout__content">
+  	<div class="manager-style__main mdl-grid">
+  		<div class="mdl-cell mdl-cell--2-col mdl-card manager-sidebar">
+  			<nav class="sidebar mdl-navigation mdl-card__supporting-text mdl-color-text--grey-700">
+  				<span class="mdl-navigation__link"><%= link_to "主页", root_path %></span>
+          <span class="mdl-navigation__link"><%= link_to "个人", current_user %></span>
+          <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user) %></span>
+          <span class="mdl-navigation__link"><%= link_to "用户", users_path %></span>
+          <span class="mdl-navigation__link"><%= link_to "退出", signout_path, method: 'delete' %></span>
+  			</ul>
+  		</div>
+  		<div class="mdl-cell mdl-cell--10-col mdl-card manager-content">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>用户名</th>
+              <th>创建日期</th>
+              <th>修改日期</th>
+              <th>权限</th>
+              <th>管理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <th><%= user.id %></th>
+                <th><%= user.name %></th>
+                <th><%= l user.created_at, :format => '%F' %></th>
+                <th><%= l user.updated_at, :format => '%F' %></th>
+                <th><%= user.admin? %></th>
+                <th>
+                  <% if admin_in? %>
+                    <%= link_to "删除", user, method: :delete, data:{ confirm: "您确定要删除吗?" } %>
+                  <% else %>
+                    <%= 没有权限 %>
+                  <% end %>
+                </th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+  		</div>
+      <div class="mdl-cell mdl-cell--1-col"></div>
+      <div class="mdl-cell mdl-cell--3-col"></div>
+      <div class="mdl-cell mdl-cell--8-col">
+        <%= paginate @users, :window => 1 %>
+      </div>
+  	</div>
+  </main>
+</div>

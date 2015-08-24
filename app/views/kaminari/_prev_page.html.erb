@@ -7,5 +7,5 @@
     remote:        data-remote
 -%>
 <button class="prev mdl-button mdl-js-button mdl-button--raised">
-  <%= link_to_unless current_page.first?, t('views.pagination.previous').html_safe, url, :rel => 'prev', :remote => remote %>
+  <%= link_to_unless current_page.first?, t('views.pagination.previous').html_safe, url, :rel => '下一页', :remote => remote %>
 </button>

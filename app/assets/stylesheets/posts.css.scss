@@ -21,10 +21,21 @@
 						z-index: 999;
 					}
 				}
+				table{
+					table-layout: fixed;
+					th{
+						overflow: hidden;
+						text-align: center;
+					}
+				}
 			}
 			.pagination{
 				display: inline-block;
 				float: left;
+				color: rgb(255,64,129);
+				.mdl-button{
+					color: rgba(255,255,255,.55);
+				}
 			}
 			.post-return-btn{
 				margin-left: 10px;

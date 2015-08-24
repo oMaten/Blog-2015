@@ -7,7 +7,7 @@
   				<span class="mdl-navigation__link"><%= link_to "主页", root_path %></span>
           <span class="mdl-navigation__link"><%= link_to "个人", current_user %></span>
           <span class="mdl-navigation__link"><%= link_to "文章", post_user_path(@user) %></span>
-          <span class="mdl-navigation__link"><%= link_to "评论", '#' %></span>
+          <span class="mdl-navigation__link"><%= link_to "用户", users_path %></span>
           <span class="mdl-navigation__link"><%= link_to "退出", signout_path, method: 'delete' %></span>
   			</ul>
   		</div>
