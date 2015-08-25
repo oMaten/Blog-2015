@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 before_filter :signed_in_user, only: [:index, :edit, :destroy]
-before_filter :admin_user, only: [:destroy, :edit, :update]
+before_filter :admin_user, only: [:destroy, :edit, :update, :new, :index]
 	def show
 		@user = User.find(1);
 		@post = Post.find(params[:id])

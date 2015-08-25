@@ -3,8 +3,10 @@ $(document).ready(function(){
 	var ifReturn = true;
 
 	$('.main-layout').on('ajax:error', function(event, xhr, status, error) {
-	  $(this).addClass('filter-blur');
-	  $('.session-block').fadeIn('slow');
+		if (xhr.status == 401) {
+			$(this).addClass('filter-blur');
+	  	$('.session-block').fadeIn('slow');
+		};
 	});
 
 	$('#close').on('click', function(){
