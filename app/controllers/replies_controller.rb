@@ -22,7 +22,7 @@ class RepliesController < ApplicationController
 
 	def destroy
 		Reply.find(params[:id]).destroy
-    redirect_to posts_path
+    redirect_to :back
 	end
 	private
 		def admin_user

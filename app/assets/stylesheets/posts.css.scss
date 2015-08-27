@@ -5,22 +5,6 @@
 		.post-style__main{
 			max-width: 1010px;
 			.post-content{
-				overflow: inherit;
-				a{
-					color: cadetblue;
-				}
-				.create-post{
-					position: absolute;
-					top: -20px;
-					left: -20px;
-					background-color: #DEB887;
-					z-index: 999;
-					.post-add-icon{
-						display: block;
-						height: inherit;
-						z-index: 999;
-					}
-				}
 				table{
 					table-layout: fixed;
 					th{

@@ -32,7 +32,7 @@ before_filter :admin_user, only: [:destroy, :show, :update, :post, :index, :post
 
   def post
     @user = User.find(params[:id])
-    @posts = Post.all(:conditions=>{:created_at=>(1.days.ago)..(Time.now)})
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def update
@@ -43,6 +43,11 @@ before_filter :admin_user, only: [:destroy, :show, :update, :post, :index, :post
     else
       render 'show'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to current_user
   end
 
   private

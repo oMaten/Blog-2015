@@ -30,13 +30,9 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :new, :index]
 
 	def destroy
 		Post.find(params[:id]).destroy
-    redirect_to posts_path
+    redirect_to :back
 	end
 
-	def index
-		@user = current_user
-		@posts = current_user.posts.page(params[:page]).per(10)
-	end
 
 	def create
 		@user = current_user
