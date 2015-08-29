@@ -20,10 +20,19 @@
   </main>
   <div class="mdl-layout__obfuscator"></div>
 </div>
-<button id="returnTop" class="mdl-button mdl-js-button mdl-button--fab returnTop-btn">
-  <i class="material-icons">keyboard_arrow_up</i>
-</button>
-<button id="demo-menu-top-left" class="mdl-button mdl-js-button home-btn">更多</button>
+<div class="function-btn">
+  <button id="toTop" class="mdl-button mdl-js-button mdl-button--fab toTop-btn">
+    <i class="material-icons">keyboard_arrow_up</i>
+  </button>
+  <button id="home" data-turn="clear" class="mdl-button mdl-js-button mdl-button--fab home-btn">
+    <i class="material-icons">reorder</i>
+  </button>
+  <button id="toBottom" class="mdl-button mdl-js-button mdl-button--fab toBottom-btn">
+    <i class="material-icons">keyboard_arrow_down</i>
+  </button>
+</div>
+
+<button id="demo-menu-top-left" class="mdl-button mdl-js-button more-btn">更多</button>
 <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-top-left">
   <% if signed_in? %>
     <li class="mdl-menu__item"><%= link_to current_user.name, current_user %></li>

@@ -146,23 +146,37 @@
 		}
 	}
 }
-.returnTop-btn{
-	background: #fff;
+.function-btn{
 	position: fixed;
 	display: block;
 	right: 0;
 	bottom: 0;
-	margin-right: 60px;
-	margin-bottom: 40px;
 	z-index: 999;
-	width: 46px;
-	min-width: 46px;
-	height: 46px;
+	width: 80px;
+	button{
+		background: #fff;
+		width: 46px;
+		min-width: 46px;
+		height: 46px;
+	}
+	.toTop-btn{
+		visibility: hidden;
+		margin-bottom: 10px;
+	}
+	.toBottom-btn{
+		visibility: hidden;
+		margin-bottom: 40px;
+	}
+	.home-btn{
+		margin-right: 60px;
+		margin-bottom: 10px;
+	}
+	button:hover{
+		background: #fff;
+	}
 }
-.returnTop-btn:hover{
-	background: #fff;
-}
-.home-btn{
+
+.more-btn{
 	background: #fff;
 	position: fixed;
 	display: block;

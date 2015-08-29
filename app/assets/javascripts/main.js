@@ -14,10 +14,33 @@ $(document).ready(function(){
 		$('.session-block').hide();
 	})
 
-	$('#returnTop').on('click', function(){
+	$('#home').on('click', function(){
+		var icon = $(this).attr('data-turn');
+		var i = $(this).children('i').html();
+		$(this).children('i').html(icon);
+		$(this).attr('data-turn', i);
+		if(i == 'reorder'){
+			$(this).siblings().css({visibility : "visible"});
+		}else{
+			$(this).siblings().css({visibility : "hidden"});
+		}
+	})
+
+	$('#toTop').on('click', function(){
 		if(ifReturn){
 			ifReturn = false;
 			$('.mdl-layout__content').animate({scrollTop:0},
+				1000,
+				function(){
+					ifReturn = true;
+				});
+		}
+	})
+
+	$('#toBottom').on('click', function(){
+		if(ifReturn){
+			ifReturn = false;
+			$('.mdl-layout__content').animate({scrollTop: $('.blog-style__posts').height()},
 				1000,
 				function(){
 					ifReturn = true;
