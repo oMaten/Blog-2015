@@ -4,6 +4,9 @@
 		padding-bottom: 100px;
 		.post-style__main{
 			max-width: 1010px;
+			.mdl-card{
+				background-color: #D6D6D6;
+			}
 			.post-content{
 				table{
 					table-layout: fixed;

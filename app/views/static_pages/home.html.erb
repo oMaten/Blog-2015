@@ -1,15 +1,6 @@
 <div class="blog-style mdl-layout mdl-js-layout">
   <main class="mdl-layout__content">
     <div class="blog-style__posts mdl-grid">
-      <div class="mdl-cell mdl-cell--8-col mdl-shadow--5dp blog-user__about">
-        <h3>欢迎来到个人前端小站</h3>
-        <h5>本站会不定期分享前端文章</h5>
-        <h6>allen_murolq@163.com</h6>
-      </div>
-      <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--5dp blog-user__info">
-        <div class="user-face__filter"></div>
-        <div class="user-face"><%= image_tag("face_01.jpeg") %></div>
-      </div>
       <% @posts.each do |post| %>
         <div class="mdl-card mdl-cell mdl-cell--12-col blog-main__post mdl-shadow--5dp">
           <div class="mdl-card__media blog-style-bg-1">
@@ -20,7 +11,7 @@
           <div class="mdl-card__actions mdl-card--border">
             <h5><%= post.user.name %></h5>
             <h5>发布于<%= l post.created_at, :format => '%F' %></h5>
-            <p>回复<%= post.replies.count %></p>
+            <h5>回复<%= post.replies.count %></h5>
           </div>
         </div>
       <% end %>
