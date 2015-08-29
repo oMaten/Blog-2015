@@ -1,7 +1,7 @@
 <% provide(:title, @post.title) %>
 <div class="post-style mdl-layout mdl-js-layout">
   <main class="mdl-layout__content">
-  	<div class="post-style__main mdl-grid">
+  	<div class="post-style__main mdl-grid blog-height">
   		<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-card">
         <div class="mdl-card__media mdl-color-text--grey-50"></div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-700 ">
@@ -44,7 +44,7 @@
             上一篇
           <% end %>
         <% end %>
-        <% if @next.present? %>
+        <% if @next.present? -%>
           <%= link_to(@next, :class=>'post-nav__next') do %>
             下一篇
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
@@ -55,4 +55,15 @@
       </div>
   	</div>
   </main>
+</div>
+<div class="function-btn">
+  <button id="toTop" class="mdl-button mdl-js-button mdl-button--fab toTop-btn">
+    <i class="material-icons">keyboard_arrow_up</i>
+  </button>
+  <button id="home" data-turn="clear" class="mdl-button mdl-js-button mdl-button--fab home-btn">
+    <i class="material-icons">reorder</i>
+  </button>
+  <button id="toBottom" class="mdl-button mdl-js-button mdl-button--fab toBottom-btn">
+    <i class="material-icons">keyboard_arrow_down</i>
+  </button>
 </div>

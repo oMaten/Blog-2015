@@ -6,10 +6,10 @@ class RepliesController < ApplicationController
 		@reply = @post.replies.build(params[:reply])
 		@reply.user = current_user
   	if @reply.save
-  		UserMailer.remind_reply(current_user, @reply).deliver
   		respond_to do |format|
 	      format.js
     	end
+    	UserMailer.remind_reply(current_user, @reply).deliver
   	else
   		render 'static_pages/home'
   	end

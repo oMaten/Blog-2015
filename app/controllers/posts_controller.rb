@@ -6,8 +6,8 @@ before_filter :admin_user, only: [:destroy, :edit, :update, :new, :index]
 		@post = Post.find(params[:id])
 		@posts = @user.posts
 		@replies = @post.replies
-		@pre = Post.find_by_id(@post.id-1)
-		@next = Post.find_by_id(@post.id+1)
+		@pre = Post.all(:having => ["created_at < ?", @post.created_at]).first
+		@next = Post.all(:having => ["created_at > ?", @post.created_at]).last
 	end
 
 	def edit

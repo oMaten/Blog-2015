@@ -40,7 +40,7 @@ $(document).ready(function(){
 	$('#toBottom').on('click', function(){
 		if(ifReturn){
 			ifReturn = false;
-			$('.mdl-layout__content').animate({scrollTop: $('.blog-style__posts').height()},
+			$('.mdl-layout__content').animate({scrollTop: $('.blog-height').height()},
 				1000,
 				function(){
 					ifReturn = true;
