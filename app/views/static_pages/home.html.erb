@@ -1,20 +1,7 @@
 <div class="blog-style mdl-layout mdl-js-layout">
   <main class="mdl-layout__content">
     <div class="blog-style__posts mdl-grid blog-height">
-      <% @posts.each do |post| %>
-        <div class="mdl-card mdl-cell mdl-cell--12-col blog-main__post mdl-shadow--5dp">
-          <div class="mdl-card__media blog-style-bg-1">
-            <h3>
-              <%= link_to post.title, post %>
-            </h3>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <h5><%= post.user.name %></h5>
-            <h5>发布于<%= l post.created_at, :format => '%F' %></h5>
-            <h5>回复<%= post.replies.count %></h5>
-          </div>
-        </div>
-      <% end %>
+      <%= render @posts %>
       <%= render 'layouts/footer' %>
     </div>
   </main>
