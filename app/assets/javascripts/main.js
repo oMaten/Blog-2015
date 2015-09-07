@@ -47,4 +47,23 @@ $(document).ready(function(){
 				});
 		}
 	})
+  var currentPage = 1;
+
+  $('.view-more').on('click', function(event){
+    event.preventDefault();
+    currentPage++;
+    $.ajax({
+      method: "GET",
+      url: "/?page=" + currentPage,
+      dataType: "xml"
+    }).done(function(data){
+      var posts = data.getElementsByClassName('blog-main__post');
+      $('.fork').html(posts);
+      $('.posts-depart').append($('.fork').html());
+      if(currentPage >= $('#count').html()){
+        $('.blog-view-more').hide();
+      }
+    })
+  })
+
 })

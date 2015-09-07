@@ -1,7 +1,14 @@
 <div class="blog-style mdl-layout mdl-js-layout">
   <main class="mdl-layout__content">
     <div class="blog-style__posts mdl-grid blog-height">
+      <div class="posts-depart" style="width:100%">
       <%= render @posts %>
+      </div>
+      <div class="mdl-card mdl-cell mdl-cell--12-col blog-footer blog-view-more">
+        <ul>
+          <li><a href="javascript:void(0);" class="view-more">查看更多</a></li>
+        </ul>
+      </div>
       <%= render 'layouts/footer' %>
     </div>
   </main>
@@ -17,4 +24,7 @@
   <button id="toBottom" class="mdl-button mdl-js-button mdl-button--fab toBottom-btn">
     <i class="material-icons">keyboard_arrow_down</i>
   </button>
+</div>
+<div class="fork" style="display:none;">
+  <div id="count"><%= @posts.total_count / @posts.size %></div>
 </div>
