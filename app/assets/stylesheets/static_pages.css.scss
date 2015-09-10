@@ -133,11 +133,17 @@
 				}
 			}
 		}
-		.blog-footer{
+		.blog-footer.mdl-card{
 			min-height: 80px;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
+			display: flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			-ms-flex-flow: row nowrap;
+			-webkit-flex-flow: row nowrap;
+			-ms-justify-content: center;
+			-webkit-justify-content: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
 			padding: 0 30px;
 			background-color: rgba(255,255,255,.85);
 			a{

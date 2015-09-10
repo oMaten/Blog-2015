@@ -59,13 +59,14 @@
 					font-weight: 100;
 				}
 				form{
-					width: 440px;
+					width: 480px;
 					position: relative;
 					margin: 0 auto;
 					button{
 						cursor: pointer;
-						position: relative;
-						top: -20px;
+						position: absolute;
+						top: 70px;
+						right: 30px;
 						background: none;
 						border: none;
 						i{

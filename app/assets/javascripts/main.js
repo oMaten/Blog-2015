@@ -66,4 +66,9 @@ $(document).ready(function(){
     })
   })
 
+  var version = $.browser;
+  if(version.msie == true){
+  	window.location.href = 'browser';
+  }
+
 })
