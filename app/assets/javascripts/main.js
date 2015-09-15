@@ -55,11 +55,12 @@ $(document).ready(function(){
     $.ajax({
       method: "GET",
       url: "/?page=" + currentPage,
-      dataType: "xml"
+      dataType: "html"
     }).done(function(data){
-      var posts = data.getElementsByClassName('blog-main__post');
-      $('.fork').html(posts);
-      $('.posts-depart').append($('.fork').html());
+    	console.log($(data).find('.blog-main__post'))
+      //var posts = data.getElementsByClassName('blog-main__post');
+      //$('.fork').html(posts);
+      $('.posts-depart').append($(data).find('.blog-main__post'));
       if(currentPage >= $('#count').html()){
         $('.blog-view-more').hide();
       }

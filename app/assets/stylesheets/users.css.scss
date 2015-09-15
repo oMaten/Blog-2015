@@ -79,6 +79,8 @@
 				display: flex;
 				display: -webkit-flex;
 				flex-direction: column;
+				-webkit-flex-direction: column;
+				-webkit-align-items: center;
 				align-items: center;
 				height: 100%;
 				min-height: 50px;
@@ -106,9 +108,11 @@
 					display: flex;
 					display: -webkit-flex;
 					flex-direction: row;
+					-webkit-flex-direction: row;
 					align-items: flex-end;
+					-webkit-flex-direction: flex-end;
 					justify-content: space-around;
-					flex-basis: 100%;
+					-webkit-justify-content: space-around;
 					.btn-posts-more{
 						align-self: center;
 						order: 999;
@@ -123,8 +127,12 @@
 						display: flex;
 						display: -webkit-flex;
 						flex-direction: column;
+						-webkit-flex-direction: column;
 						align-items: flex-end;
+						-webkit-align-items: flex-end;
 						flex-basis: 100%;
+						-webkit-flex-basis: 100%;
+						-webkit-flex-wrap: wrap;
 						flex-wrap: wrap;
 						.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label{
 		    			color: #A5AAB9;
@@ -147,11 +155,16 @@
 				}
 				.mdl-card__actions{
 					display: flex;
+					display: -webkit-flex;
+					-webkit-flex-direction: column;
 					flex-direction: column;
 					max-height: 280px;
 					.posts{
 						display: flex;
+						display: -webkit-flex;
+						-webkit-flex-direction: column;
 						flex-direction: column;
+						-webkit-flex-wrap: wrap;
 						flex-wrap: wrap;
 						overflow: auto;
 						li{

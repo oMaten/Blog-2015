@@ -1,2 +1,2 @@
 这是利用rails制作的个人blog练习，前端使用的是material design lite。
-不支持ie9以下浏览器。
+暂不支持ie9以下浏览器。
